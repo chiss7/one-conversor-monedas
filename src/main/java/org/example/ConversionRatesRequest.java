@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Map;
 
-public record ConversionRatesResponse(
+public record ConversionRatesRequest(
         String result,
         String baseCode,
         Map<String, Double> conversionRates

@@ -37,7 +37,7 @@ public class CurrencyConverter {
                     .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                     .create();
 
-            ConversionRatesResponse json_response = gson.fromJson(response.body(), ConversionRatesResponse.class);
+            ConversionRatesRequest json_response = gson.fromJson(response.body(), ConversionRatesRequest.class);
             this.conversionRate = new ConversionRates(json_response.result(), json_response.baseCode(), json_response.conversionRates());
             this.conversionRatesCache.put(baseCode, this.conversionRate);
         } catch (InterruptedException | IOException e) {
